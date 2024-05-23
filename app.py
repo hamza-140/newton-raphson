@@ -20,6 +20,11 @@ def newton_raphson(f, x, x0, tol=1e-6, max_iter=100):
         x0 = x_new
     raise ValueError("Maximum iterations exceeded, no solution found.")
 
+
+@app.route("/")
+def start():
+    return "The Server is Running"
+
 @app.route('/api/newton_raphson', methods=['POST'])
 def api_newton_raphson():
     try:
